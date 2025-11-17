@@ -31,16 +31,17 @@ function SaleForm() {
         throw new Error(data.error || "Error al registrar la venta");
       }
 
-      setMessage("✅ Venta registrada con éxito");
+      setMessage(" Venta registrada con éxito");
       setFormData({ amount: "", id_customer: "" });
     } catch (error) {
-      setMessage(`❌ ${error.message}`);
+      setMessage(` ${error.message}`);
     }
   };
 
   return (
     <div className="p-6">
       <h2 className="text-2xl font-semibold mb-4">Registrar Nueva Venta</h2>
+     
       <form onSubmit={handleSubmit} className="space-y-4 max-w-md">
         <div>
           <label className="block mb-1">Monto:</label>
@@ -74,10 +75,11 @@ function SaleForm() {
         >
           Guardar Venta
         </button>
+       
       </form>
 
       {message && <p className="mt-4 font-medium">{message}</p>}
-    </div>
+     </div> 
   );
 }
 
